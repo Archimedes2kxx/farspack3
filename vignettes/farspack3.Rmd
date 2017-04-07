@@ -12,35 +12,19 @@ vignette: >
 
 The National Highway Traffic Safety Administration's (Fatality Analysis Reporting System)[http://www.nhtsa.gov/Data/Fatality-Analysis-Reporting-System-(FARS)] is a nationwide census that provides the American public with yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
 
-The <b>farspack</b> package enables users to request two kinds of outputs from the FARS data files for the years 2013, 2014, and 2015 that that are embedded in the package:   
+The <b>farspack</b> package enables users to request two kinds of outputs from the FARS data files that that are embedded in the package:   
 
 * <b>Monthly tabulations</b> of the number of fatal accidents that occurred in one or more years are obtained by calling the <b>fars_summarize_years</b> function.<br />   
 * A <b>map</b> of a specific state for a specified year is obtained by calling the <b>fars_map_state</b> function.
 
-```{r LIBRARIES, echo=FALSE, include=FALSE}
-### Note -- The farspack functions must be "tricked". First the working directory must be changed to the R directory befoe each call to a function; then set back to the vignettes directore after the call. Second copies of the data files must be placed in the R director.
-    library(dplyr)
-    library(farspack3)
-    library(maps)
-```
-
 
 ## FARS Data Files
-The package reads the three data fiiles into tables that have the following format:
-```{r TABLE, echo=FALSE}
-    filename <- make_filename(2013)
-    fars_read(filename)
-```
+The package contains embedded data files for the years 2013, 2014, and 2015 that it reads into tables
+
 
 ## Monthly Tabulations
-Users can request a table of monthly fatalities for one or more years via the <b>fars_summarize_years</b> function with the requested years as input arguments. For example, if the user wanted fatalities for the years 2013 and 2015, the user would call  <b>fars_summarize_years(c(2013, 2015))</b>  and receive the following output: <br />
+Users can request a table of monthly fatalities for one or more years via the <b>fars_summarize_years</b> function with the requested years as input arguments. For example, if the user wanted fatalities for the years 2013 and 2015, the user would call  <b>fars_summarize_years(c(2013, 2015))</b>  
 
-```{r SUMMARIZE, echo=FALSE}
-    fars_summarize_years(c(2013, 2015))
-```
 ## State Fatality Maps   
-Users can request a map of monthly fatalities in a specific state for a specific year via the <b>fars_map_state</b> function. The state will be "colored" with dots that represent fatalities in specific locations within the state. The more fatalities in more locations, the more dots that will appear on the map. The user calls this function with two inputs, the ID of the state and the year. For example, if the user wanted the auto fatalities for California -- the sixth state in alphabetical order -- for 2014, the user would call <b>fars_map_state(6, 2015</b> and receive the following output:<br />
-```{r, echo=FALSE}
-    fars_map_state(6, 2014)
-```
+Users can request a map of monthly fatalities in a specific state for a specific year via the <b>fars_map_state</b> function. The state will be "colored" with dots that represent fatalities in specific locations within the state. The more fatalities in more locations, the more dots that will appear on the map. The user calls this function with two inputs, the ID of the state and the year. For example, if the user wanted the auto fatalities for California -- the sixth state in alphabetical order -- for 2014, the user would call <b>fars_map_state(6, 2015</b><br />
 

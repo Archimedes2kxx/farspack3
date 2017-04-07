@@ -15,5 +15,6 @@ Imports:
     readr,
     tidyr
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
