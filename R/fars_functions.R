@@ -100,8 +100,12 @@ fars_summarize_years <- function(years) {
 #' @export
 #'
 fars_map_state <- function(state.num, year) {
+    
     filename <- make_filename(year)
     data <- fars_read(filename)
+### Call test_that
+    expect_is(data, "tibble") 
+    
     state.num <- as.integer(state.num)
 
     if(!(state.num %in% unique(data$STATE)))
