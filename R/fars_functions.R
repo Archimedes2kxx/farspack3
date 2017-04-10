@@ -10,10 +10,10 @@
 #' 
 #' @export
 fars_read <- function(filename) {
-    if(!file.exists(filename))
+    if(!file.exists(system.file("extdata", filename, package="farspack3")))
         stop("file '", filename, "' does not exist")
     data <- suppressMessages({
-        readr::read_csv(filename, progress = FALSE)
+        readr::read_csv(system.file("extdata", filename, package="farspack3"), progress = FALSE)
     })
     dplyr::tbl_df(data)
 }
