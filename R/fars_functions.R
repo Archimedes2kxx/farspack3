@@ -7,7 +7,7 @@
 #' @return Function returns a table of data from the specified file
 #'
 #' @note This function will fail if a file with the specified name does not exist
-#'
+#' 
 #' @export
 fars_read <- function(filename) {
     if(!file.exists(filename))
@@ -103,8 +103,6 @@ fars_map_state <- function(state.num, year) {
     
     filename <- make_filename(year)
     data <- fars_read(filename)
-### Call test_that
-    expect_is(data, "tibble") 
     
     state.num <- as.integer(state.num)
 
