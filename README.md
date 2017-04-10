@@ -1,5 +1,6 @@
 # farspack3
 Repo for Building R Packages course, JHU, Spring 2017
+<<<<<<< HEAD
 Here's the badge that shows a "passing" evaluation from Travis
 https://travis-ci.org/Archimedes2kxx/farspack3.svg?branch=master
 
